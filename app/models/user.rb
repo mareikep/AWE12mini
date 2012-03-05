@@ -1,5 +1,14 @@
 class User < ActiveRecord::Base
-	belongs_to :user
+  belongs_to :group
+  
+  def join_group(group)
+    self.group_id = group.id
+  end
+  
+  def unjoin_group(group)
+    self.group_id = nil
+  end
+  
 end
 # == Schema Information
 #

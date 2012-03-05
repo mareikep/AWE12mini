@@ -80,4 +80,9 @@ class GroupsController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+#  def join
+#    @user = User.find(params[:id])
+#    @user.group_id = @group.id
+#  end
 end
