@@ -5,6 +5,8 @@ Miniproject::Application.routes.draw do
   resources :users
   resources :sessions, only: [:create, :destroy]
   
+  match '/signin',  to: 'sessions#new'
+  
   match '/signup',  to: 'users#new'
   root to: 'static_pages#home'
 
