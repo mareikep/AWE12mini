@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120305193956) do
+ActiveRecord::Schema.define(:version => 20120305201445) do
 
   create_table "groups", :force => true do |t|
     t.string   "name"
@@ -27,6 +27,7 @@ ActiveRecord::Schema.define(:version => 20120305193956) do
     t.datetime "updated_at",      :null => false
     t.integer  "group_id"
     t.string   "password_digest"
+    t.string   "remember_token"
   end
 
 end

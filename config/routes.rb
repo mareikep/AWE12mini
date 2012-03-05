@@ -1,11 +1,18 @@
 Miniproject::Application.routes.draw do
   get "static_pages/home"
 
-  resources :groups
-  resources :users
+  resources :groups do
+    member do
+      get :join
+    end
+  end
+  
+  resources :users 
+  
   resources :sessions, only: [:create, :destroy]
   
   match '/signin',  to: 'sessions#new'
+  match '/signout', to: 'sessions#destroy', via: :delete
   
   match '/signup',  to: 'users#new'
   root to: 'static_pages#home'

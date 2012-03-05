@@ -80,4 +80,10 @@ class GroupsController < ApplicationController
       format.json { head :no_content }
     end
   end
+  
+  def join
+    @group = Group.find(params[:id])
+    current_user.update_attribute(:group_id, @group.id)
+    redirect_back_or current_user
+  end
 end
