@@ -1,7 +1,9 @@
-source 'http://rubygems.org'
+   source 'http://rubygems.org'
 
 gem 'rails', '3.2.1'
 gem 'will_paginate', '3.0.3'
+gem 'bcrypt-ruby', '3.0.1'
+
 
 group :development do
   gem 'sqlite3', '1.3.5'
