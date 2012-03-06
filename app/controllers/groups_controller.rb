@@ -86,4 +86,10 @@ class GroupsController < ApplicationController
     current_user.update_attribute(:group_id, @group.id)
     redirect_back_or current_user
   end
+
+  def leave
+    @group = Group.find(params[:id])
+    current_user.update_attribute(:group_id, nil)
+    redirect_back_or current_user
+  end
 end

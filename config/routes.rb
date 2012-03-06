@@ -2,7 +2,7 @@ Miniproject::Application.routes.draw do
   get "static_pages/home"
   resources :groups do
     member do
-      get :join
+      get :join, :leave
     end
   end
   
