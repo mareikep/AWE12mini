@@ -84,12 +84,16 @@ class GroupsController < ApplicationController
   def join
     @group = Group.find(params[:id])
     current_user.update_attribute(:group_id, @group.id)
+    current_user.save!
+    sign_in current_user
     redirect_back_or current_user
   end
 
   def leave
     @group = Group.find(params[:id])
     current_user.update_attribute(:group_id, nil)
+    current_user.save!
+    sign_in current_user
     redirect_back_or current_user
   end
 end
